@@ -2,32 +2,41 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digital Banner</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Digital Banner Pro</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="ui-container">
-        <h1>Digital Banner</h1>
+    <div id="app-wrapper">
         
-        <input type="text" id="userInput" placeholder="Type your message...">
+        <div id="ui-container">
+            <h1>Digital Banner</h1>
+            
+            <input type="text" id="userInput" placeholder="Type message (e.g. 'OI BRO!')">
 
-        <div class="settings">
-            <div class="control-group">
-                <label>Color</label>
-                <input type="color" id="colorPicker" value="#ff0000">
+            <div class="settings">
+                <div class="control-group">
+                    <label>Color</label>
+                    <input type="color" id="colorPicker" value="#ff0000">
+                </div>
+                <div class="control-group">
+                    <label>Size (vh)</label>
+                    <input type="number" id="fontSize" value="50" min="10" max="90">
+                </div>
+                <div class="control-group">
+                    <label>Speed (s)</label>
+                    <input type="number" id="speed" value="10" min="1" max="30">
+                </div>
             </div>
-            <div class="control-group">
-                <label>Size (vh)</label>
-                <input type="number" id="fontSize" value="40" min="10" max="90">
-            </div>
+
+            <button onclick="startBanner()">GO FULLSCREEN</button>
+            <p style="font-size: 10px; color: #666; margin-top: 10px;">Tip: Tilt phone to change direction!</p>
         </div>
 
-        <button onclick="startBanner()">Display Message</button>
-    </div>
+        <div id="banner-screen" class="hidden" onclick="stopBanner()">
+            <div id="scrolling-text"></div>
+        </div>
 
-    <div id="banner-screen" class="hidden" onclick="stopBanner()">
-        <div id="scrolling-text"></div>
     </div>
 
     <script src="script.js"></script>

@@ -81,6 +81,27 @@ button {
     animation: scroll-left 10s linear infinite;
 }
 
+
+
+/* Ensure the wrapper covers the whole screen when fullscreen */
+#app-wrapper:fullscreen {
+    background-color: black;
+    width: 100vw;
+    height: 100vh;
+}
+
+/* For iPhones/Safari */
+#app-wrapper:-webkit-full-screen {
+    background-color: black;
+    width: 100vw;
+    height: 100vh;
+}
+
+#banner-screen {
+    cursor: pointer; /* Tells user they can click to exit */
+}
+
+
 @keyframes scroll-left {
     from { transform: translateX(100vw); }
     to { transform: translateX(-100%); }
